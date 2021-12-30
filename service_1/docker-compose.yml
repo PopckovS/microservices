@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+
+# Сервис для основного приложения
+#  main:
+
+# Сервис postgres для основного приложения
+  main_postgres:
+    image: postgres
+    container_name: main_postgres
+    restart: always
+    volumes:
+      - /var/www/microservices/service_1/postgres/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: 777
+      POSTGRES_DB: "microservices"
+    ports:
+      - 9001:5432
