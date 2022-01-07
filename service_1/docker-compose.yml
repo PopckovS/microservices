@@ -1,19 +1,73 @@
 version: '3.5'
 services:
 
-# Сервис для основного приложения
-#  main:
+# ====================== Сервис №1 Django + Postgres ======================
 
-# Сервис postgres для основного приложения
+  # Django приложения
+  main_django:
+    build:
+      context: ./main
+      dockerfile: Dockerfile
+      network: host
+    container_name: main_django
+    restart: always
+#    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./main:/usr/src/app
+    ports:
+      - 9000:8000
+    depends_on:
+      - main_postgres
+    env_file:
+      - ./main/.env
+
+  # Postgres для Django приложения
   main_postgres:
     image: postgres
     container_name: main_postgres
     restart: always
-    volumes:
-      - /var/www/microservices/service_1/postgres/data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: 777
-      POSTGRES_DB: "microservices"
     ports:
       - 9001:5432
+    volumes:
+       - ./postgres/data:/var/lib/postgresql/data
+    env_file:
+      - ./postgres/.env
+
+
+# ====================== Сервис №2 Metabase + Postgres ======================
+# Почитать про переменные окружения для запуска MetaBase:
+#     https://www.metabase.com/docs/latest/operations-guide/environment-variables.html
+
+  # Metabase приложение
+  metabase-app:
+    image: metabase/metabase
+    restart: always
+    ports:
+      - 9002:3000
+    volumes:
+      - ./metabase/data:/metabase-data
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase
+      MB_DB_PORT: 5432
+      MB_DB_USER: postgres
+      MB_DB_PASS: 777
+      MB_DB_HOST: postgres_metabase
+    depends_on:
+      - postgres_metabase
+    links:
+      - postgres_metabase
+
+
+  # Postgres для Metabase приложения
+  postgres_metabase:
+    image: postgres
+    container_name: postgres_metabase
+    restart: always
+    volumes:
+       - ./postgres_metabase/data:/var/lib/postgresql/data
+    ports:
+      - 9003:5432
+    env_file:
+      - ./postgres_metabase/.env
+
