@@ -90,3 +90,13 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
 
+  # Postgres для Hasura приложения
+  postgres_hasura:
+    image: postgres:12
+    restart: always
+    volumes:
+      - ./postgres_hasura/data:/var/lib/postgresql/data
+    ports:
+      - 9005:5432
+    env_file:
+      - ./postgres_hasura/.env
