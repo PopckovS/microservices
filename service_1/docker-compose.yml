@@ -100,3 +100,79 @@ services:
       - 9005:5432
     env_file:
       - ./postgres_hasura/.env
+
+  # Flask приложение как Web Hook для Hasura
+  hasura_hook:
+    build:
+      context: ./hasura_hook
+      dockerfile: Dockerfile
+      network: host
+    container_name: hasura_hook
+    restart: always
+    volumes:
+      - ./hasura_hook:/usr/src/app
+    ports:
+      - 9006:8000
+    depends_on:
+      - graphql-engine
+#    env_file:
+#      - ./hasura_hook/.env
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#volumes:
+#  postgres_hasura/data:
+
+
+#    environment:
+#      MB_DB_TYPE: postgres
+#      MB_DB_DBNAME: microservices
+#      MB_DB_PORT: 5432
+#      MB_DB_USER: postgres
+#      MB_DB_PASS: 777
+#      MB_DB_HOST: main_postgres
+
+
+#  # Сервис metabase 1
+#  metabase-app:
+#      image: metabase/metabase
+#      restart: always
+#      ports:
+#        - 9003:3000
+#      volumes:
+#        # declare your mount volume /host/dir:/container/dir
+#        - ./metabase/data:/metabase-data
+#      environment:
+#        MB_DB_TYPE: postgres
+#        MB_DB_DBNAME: microservices
+#        MB_DB_PORT: 9003
+#        MB_DB_USER: postgres
+#        MB_DB_PASS: 777
+#        MB_DB_HOST: main_postgres
+#      depends_on:
+#        - main_postgres
+#      links:
+#        - main_postgres
+
+
+
+#    environment:
+#      POSTGRES_USER: "postgres"
+#      POSTGRES_PASSWORD: 777
+#      POSTGRES_DB: "microservices"
