@@ -71,3 +71,22 @@ services:
     env_file:
       - ./postgres_metabase/.env
 
+
+# ====================== Сервис №3 Hasura + Postgres + Flask(Web hook) ======================
+
+  # Hasura приложение
+  graphql-engine:
+    image: hasura/graphql-engine:v2.1.1
+    ports:
+      - 9004:8080
+    depends_on:
+      - postgres_hasura
+    restart: always
+    environment:
+      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:777@postgres_hasura:5432/hasura
+      PG_DATABASE_URL: postgres://postgres:777@postgres_hasura:5432/hasura
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_DEV_MODE: "true"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
+      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+
