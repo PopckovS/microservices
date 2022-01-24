@@ -1,0 +1,26 @@
+[
+{
+  "model": "front.categorymodel",
+  "pk": 1,
+  "fields": {
+    "title": "Python 3",
+    "content": "Описание по Python 3"
+  }
+},
+{
+  "model": "front.categorymodel",
+  "pk": 2,
+  "fields": {
+    "title": "Docker",
+    "content": "Описанеи Docker"
+  }
+},
+{
+  "model": "front.categorymodel",
+  "pk": 3,
+  "fields": {
+    "title": "SQL",
+    "content": "Описание SQL"
+  }
+}
+]
