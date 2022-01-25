@@ -5,15 +5,26 @@ from django.db import models
 """
 
 
-# class CategoryModel(models.Model):
-#     pass
-
 # class CommentaryModel(models.Model):
 #     pass
 
 
-class PostModel(models.Model):
+class CategoryModel(models.Model):
+    """Категория для статей"""
 
+    name = models.CharField(max_length=100, blank=False, null=False, verbose_name='Название категории',
+                            help_text='Название категории, обязательное, 100 символов.')
+
+    class Meta:
+        verbose_name = 'Категория статьи'
+        verbose_name_plural = 'Категория статей'
+        db_table = 'blog_category'
+
+    def __str__(self):
+        return self.name
+
+
+class PostModel(models.Model):
     """Статья"""
 
     title = models.CharField(max_length=250, blank=False, null=False, verbose_name='Заголовок',
@@ -25,6 +36,9 @@ class PostModel(models.Model):
 
     description = models.TextField(blank=False, null=False, verbose_name='Текст статьи',
                                    help_text='Текст статьи,  обязательное.')
+
+    parent_category = models.ForeignKey('CategoryModel', blank=False, null=False,
+                                        verbose_name='Категория статьи', on_delete=models.PROTECT)
 
     class Meta:
         verbose_name = 'Статья'
