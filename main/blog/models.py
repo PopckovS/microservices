@@ -37,8 +37,8 @@ class PostModel(models.Model):
     description = models.TextField(blank=False, null=False, verbose_name='Текст статьи',
                                    help_text='Текст статьи,  обязательное.')
 
-    # parent_category = models.ForeignKey('CategoryModel', blank=False, null=False,
-    #                                     verbose_name='Категория статьи', on_delete=models.PROTECT)
+    parent_category = models.ForeignKey('CategoryModel', blank=False, null=True,
+                                        verbose_name='Категория статьи', on_delete=models.PROTECT)
 
     class Meta:
         verbose_name = 'Статья'
