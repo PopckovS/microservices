@@ -45,7 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'front.apps.FrontConfig'
+    # TODO Фронт для теста потом удалить
+    'front.apps.FrontConfig',
+    
+    # Блог с публикациями 
+    'blog.apps.BlogConfig'
 ]
 
 MIDDLEWARE = [
