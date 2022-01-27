@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 """
 Модели для работы блога
@@ -23,6 +24,10 @@ class CategoryModel(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        """Возвращает абсолютный путь к конкретному объекту модели по ее pk"""
+        return reverse('blog_one_category', kwargs={'category_id': self.pk})
+
 
 class PostModel(models.Model):
     """Статья"""
@@ -37,6 +42,12 @@ class PostModel(models.Model):
     description = models.TextField(blank=False, null=False, verbose_name='Текст статьи',
                                    help_text='Текст статьи,  обязательное.')
 
+    create_date = models.DateTimeField(auto_now_add=True, null=True, verbose_name='Дата создания')
+
+    update_date = models.DateTimeField(auto_now=True, null=True, verbose_name='Дата обновления')
+
+    # logo_img =
+
     parent_category = models.ForeignKey('CategoryModel', blank=False, null=True,
                                         verbose_name='Категория статьи', on_delete=models.PROTECT)
 
@@ -48,3 +59,6 @@ class PostModel(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        """Возвращает абсолютный путь к конкретному объекту модели по ее pk"""
+        return reverse('blog_one_post', kwargs={'post_id': self.pk})
