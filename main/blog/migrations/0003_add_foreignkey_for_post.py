@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0002_add_category_model_for_blog'),
+        ('blog', '0002_create_category_model_for_blog'),
     ]
 
     operations = [
