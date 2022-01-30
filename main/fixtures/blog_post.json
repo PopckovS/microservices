@@ -1,0 +1,105 @@
+[
+{
+  "model": "blog.postmodel",
+  "pk": 3,
+  "fields": {
+    "title": "Статья 1",
+    "short_description": "Короткое описание Статья 1",
+    "description": "Статья 1 Статья 1 Статья 1 Статья 1 Статья 1",
+    "create_date": "2022-01-30T01:35:57.579Z",
+    "update_date": "2022-01-30T01:35:57.579Z",
+    "publish": true,
+    "parent_category": 1,
+    "post_tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "blog.postmodel",
+  "pk": 4,
+  "fields": {
+    "title": "Статья 2",
+    "short_description": "Короткое опсиание Статья 2",
+    "description": "Статья 2 Статья 2 Статья 2 Статья 2 Статья 2 Статья 2",
+    "create_date": "2022-01-30T01:36:24.165Z",
+    "update_date": "2022-01-30T01:36:24.165Z",
+    "publish": true,
+    "parent_category": 2,
+    "post_tags": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "blog.postmodel",
+  "pk": 5,
+  "fields": {
+    "title": "Статья 3",
+    "short_description": "Короткое опсиание Статья 3",
+    "description": "Статья 3 Статья 3 Статья 3 Статья 3 Статья 3 Статья 3",
+    "create_date": "2022-01-30T01:36:40.972Z",
+    "update_date": "2022-01-30T01:36:40.972Z",
+    "publish": true,
+    "parent_category": 3,
+    "post_tags": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "blog.postmodel",
+  "pk": 6,
+  "fields": {
+    "title": "Статья 4",
+    "short_description": "Короткое опсиание Статья 4",
+    "description": "Статья 4 Статья 4 Статья 4 Статья 4 Статья 4 Статья 4",
+    "create_date": "2022-01-30T01:36:55.518Z",
+    "update_date": "2022-01-30T01:36:55.518Z",
+    "publish": true,
+    "parent_category": 1,
+    "post_tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "blog.postmodel",
+  "pk": 7,
+  "fields": {
+    "title": "Статья 5",
+    "short_description": "Короткое опсиание Статья 5",
+    "description": "Статья 5 Статья 5 Статья 5 Статья 5 Статья 5 Статья 5",
+    "create_date": "2022-01-30T01:37:06.692Z",
+    "update_date": "2022-01-30T01:37:06.692Z",
+    "publish": true,
+    "parent_category": 2,
+    "post_tags": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "blog.postmodel",
+  "pk": 8,
+  "fields": {
+    "title": "Статья 6",
+    "short_description": "Короткое опсиание Статья 6",
+    "description": "Статья 6 Статья 6 Статья 6 Статья 6 Статья 6 Статья 6 Статья 6 Статья 6",
+    "create_date": "2022-01-30T01:37:17.727Z",
+    "update_date": "2022-01-30T01:37:17.728Z",
+    "publish": true,
+    "parent_category": 3,
+    "post_tags": [
+      1,
+      2,
+      3
+    ]
+  }
+}
+]

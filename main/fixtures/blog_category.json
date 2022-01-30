@@ -1,0 +1,23 @@
+[
+{
+  "model": "blog.categorymodel",
+  "pk": 1,
+  "fields": {
+    "name": "Категори 1"
+  }
+},
+{
+  "model": "blog.categorymodel",
+  "pk": 2,
+  "fields": {
+    "name": "Категори 2"
+  }
+},
+{
+  "model": "blog.categorymodel",
+  "pk": 3,
+  "fields": {
+    "name": "Категори 3"
+  }
+}
+]

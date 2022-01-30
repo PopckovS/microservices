@@ -1,0 +1,122 @@
+[
+{
+  "model": "blog.commentarymodel",
+  "pk": 2,
+  "fields": {
+    "text": "Комментарий 1.1",
+    "parent_post": 3
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 3,
+  "fields": {
+    "text": "Комментарий 1.2",
+    "parent_post": 3
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 4,
+  "fields": {
+    "text": "Комментарий 1.3",
+    "parent_post": 3
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 5,
+  "fields": {
+    "text": "Комментарий 1.4",
+    "parent_post": 3
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 6,
+  "fields": {
+    "text": "Комментарий 2.1",
+    "parent_post": 4
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 7,
+  "fields": {
+    "text": "Комментарий 2.2",
+    "parent_post": 4
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 8,
+  "fields": {
+    "text": "Комментарий 3.1",
+    "parent_post": 5
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 9,
+  "fields": {
+    "text": "Комментарий 3.2",
+    "parent_post": 5
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 10,
+  "fields": {
+    "text": "Комментарий 3.3",
+    "parent_post": 5
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 11,
+  "fields": {
+    "text": "Комментарий 4.1",
+    "parent_post": 6
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 12,
+  "fields": {
+    "text": "Комментарий 4.2",
+    "parent_post": 6
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 13,
+  "fields": {
+    "text": "Комментарий 5.1",
+    "parent_post": 7
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 14,
+  "fields": {
+    "text": "Комментарий 5.2",
+    "parent_post": 7
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 15,
+  "fields": {
+    "text": "Комментарий 6.1",
+    "parent_post": 8
+  }
+},
+{
+  "model": "blog.commentarymodel",
+  "pk": 16,
+  "fields": {
+    "text": "Комментарий 6.2",
+    "parent_post": 8
+  }
+}
+]
