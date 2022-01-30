@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import PostModel
+from blog.models import PostModel, CategoryModel, CommentaryModel, TagsModel
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -7,5 +7,12 @@ class PostAdmin(admin.ModelAdmin):
     pass
 
 
-admin.site.register(PostModel, PostAdmin)
+class CategoryAdmin(admin.ModelAdmin):
+    """Класс для кастомизации модели категорий статей в админке"""
+    pass
 
+
+admin.site.register(PostModel, PostAdmin)
+admin.site.register(CategoryModel, CategoryAdmin)
+admin.site.register(CommentaryModel)
+admin.site.register(TagsModel)
